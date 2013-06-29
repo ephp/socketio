@@ -1,17 +1,24 @@
 <?php
+require 'loader.php';
 
-require( __DIR__ . '/../lib/ElephantIO/Client.php');
-use ElephantIO\Client as ElephantIOClient;
+use Tembo\Message;
+use Tembo\SocketIOClient;
 
-$elephant = new ElephantIOClient('http://localhost:8000', 'socket.io', 1, false, true, true);
+$client = new SocketIOClient('http://localhost:8000');
 
-$elephant->init();
-$elephant->send(
-    ElephantIOClient::TYPE_EVENT,
-    null,
-    null,
-    json_encode(array('name' => 'action', 'args' => 'foo'))
-);
-$elephant->close();
+$client->connect();
 
-echo 'tryin to send `foo` to the event called action';
+$client->emit('subscribe', ['room' => 'test']);
+
+$received = 0;
+try {
+	$client->listen(function($event, Message $message = null) use (&$received) {
+		if($message !== null) {
+			$args = $message->getArgs();
+			$message = sprintf('packet: %d, time: %f, heartbeats: %d', $args->packet, $args->time, $args->heartbeats);
+			writeDebug($message);
+		}
+	});
+} catch(\RuntimeException $e) {
+	echo $e->getMessage();
+}

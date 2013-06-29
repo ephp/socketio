@@ -1,18 +1,22 @@
 <?php
 
-require_once(__DIR__.'/../lib/ElephantIO/Client.php');
+require_once(__DIR__ . '/../lib/Tembo/SocketIOClient.php');
 
-use ElephantIO\Client;
+use Tembo\SocketIOClient;
 
 class ClientTest extends PHPUnit_Framework_TestCase
 {
-    public function testGenerateKey() {
-        $reflectionMethod = new ReflectionMethod('ElephantIO\Client', 'generateKey');
-        $reflectionMethod->setAccessible(true);
 
-        $key = $reflectionMethod->invoke(new Client('http://localhost.net'));
+	public function testGenerateKey()
+	{
+		$reflectionMethod = new ReflectionMethod('Tembo\SocketIOClient', 'generateKey');
+		$reflectionMethod->setAccessible(true);
 
-        $this->assertEquals(24, strlen($key));
-    }
+		$key = $reflectionMethod->invoke(new SocketIOClient('http://localhost.net'));
+
+		$this->assertEquals(24, strlen($key));
+	}
+
+
 }
 
