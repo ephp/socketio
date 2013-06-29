@@ -21,7 +21,7 @@ class Message
 	{
 		$decoded = json_decode($json);
 		$this->name = $decoded->name;
-		$this->args = json_decode(current($decoded->args));
+		$this->args = $decoded->args;
 	}
 
 
