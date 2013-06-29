@@ -5,7 +5,7 @@ require 'loader.php';
 use ElephantIO\Message;
 use Tembo\SocketIOClient;
 
-$client = new SocketIOClient('http://localhost:8000');
+$client = new SocketIOClient('http://localhost:8080');
 
 $client->connect();
 $sent = 0;
