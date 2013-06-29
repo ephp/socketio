@@ -1,6 +1,6 @@
 # Tembo
 
-GPL Licenced - Copyright © 2013. Martin Bažík
+MIT Licensed - Copyright © 2013. Martin Bažík
 
 ## About
 
@@ -45,7 +45,7 @@ $client->listen($callback);
 
 ## Licence
 
-This software is distributed under MIT License. See license file for more info.
+This software is distributed under MIT License. See license.txt file for more info.
 
 ## Special Thanks
 
