@@ -7,8 +7,6 @@ require( __DIR__ . '/../lib/Tembo/Packet.php');
 function writeDebug($message)
 {
 	static $lastMessageLength = '';
-
-
 	$length = strlen($message);
 
 	// append whitespace to match the last line's length

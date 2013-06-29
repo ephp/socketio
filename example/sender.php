@@ -25,11 +25,11 @@ while (true) {
 			$heartbeats++;
 		}
 
-		$payload = [
+		$payload = array(
 			"packet" => $sent,
 			"time" => $elapsedTime,
 			'heartbeats' => $heartbeats
-		];
+		);
 
 		$message = sprintf('packet: %d, time: %f, heartbeats: %d', $sent, $elapsedTime, $heartbeats);
 

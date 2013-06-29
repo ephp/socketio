@@ -13,7 +13,7 @@
         <!-- <server name="GS_BIN" value="CHOOSE_YOUR_GS_HERE" /> -->
     </php>
     <testsuites>
-        <testsuite name="Elephant.io test suite">
+        <testsuite name="Tembo test suite">
             <directory>./test/</directory>
         </testsuite>
     </testsuites>
