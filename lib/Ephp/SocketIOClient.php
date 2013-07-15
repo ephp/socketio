@@ -1,13 +1,14 @@
 <?php
 
-namespace Tembo;
+namespace Ephp;
 
 /**
- * Tembo is a rough implementation of socket.io protocol.
+ * Ephp is a rough implementation of socket.io protocol.
  * It should ease you dealing with a socket.io server.
+ * Based on Tembo by @author Martin Bažík <martin@bazo.sk>
  * Based on ElephantIO by @author Ludovic Barreca <ludovic@balloonup.com>
  * 
- * @author Martin Bažík <martin@bazo.sk>
+ * @author Ephraim Pepe <ephraim.pepe@gmail.com>
  */
 class SocketIOClient
 {

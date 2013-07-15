@@ -1,6 +1,6 @@
 <?php
 
-namespace Tembo;
+namespace Ephp;
 
 class Payload
 {
