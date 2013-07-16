@@ -2,8 +2,8 @@
 
 require 'loader.php';
 
-use ElephantIO\Message;
-use Tembo\SocketIOClient;
+use Ephp\Message;
+use Ephp\SocketIOClient;
 
 $client = new SocketIOClient('http://localhost:8080');
 

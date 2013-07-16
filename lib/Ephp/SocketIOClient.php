@@ -171,7 +171,7 @@ class SocketIOClient
 			if ($response === NULL) {
 				throw new \RuntimeException('Connection to socket.io has been closed forcefully.');
 			}
-
+                        
 			if (!is_null($callback)) {
 				$this->processIncoming($response, $callback);
 			}
@@ -214,7 +214,6 @@ class SocketIOClient
 
 		// There is also masking bit, as MSB, but it's 0 in current Socket.io
 		$payloadLength = ord(fread($this->fd, 1));
-
 		if ($payloadLength === 0) {
 			return NULL;
 		}
@@ -229,7 +228,13 @@ class SocketIOClient
 				break;
 		}
 
-		$payload = fread($this->fd, $payloadLength);
+//		$payload = fread($this->fd, $payloadLength);
+		$payload = '';
+                $i = 0;
+                while(strlen($payload) < $payloadLength) {
+                    $pl = fread($this->fd, $payloadLength);
+                    $payload .= $pl; //fread($this->fd, $payloadLength);
+                }
 
 		return $payload;
 	}

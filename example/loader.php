@@ -1,8 +1,8 @@
 <?php
-require( __DIR__ . '/../lib/Tembo/SocketIOClient.php');
-require( __DIR__ . '/../lib/Tembo/Message.php');
-require( __DIR__ . '/../lib/Tembo/Payload.php');
-require( __DIR__ . '/../lib/Tembo/Packet.php');
+require( __DIR__ . '/../lib/Ephp/SocketIOClient.php');
+require( __DIR__ . '/../lib/Ephp/Message.php');
+require( __DIR__ . '/../lib/Ephp/Payload.php');
+require( __DIR__ . '/../lib/Ephp/Packet.php');
 
 function writeDebug($message)
 {
