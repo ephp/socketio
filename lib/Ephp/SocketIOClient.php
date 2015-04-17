@@ -36,7 +36,7 @@ class SocketIOClient
 	public function __construct($socketIOUrl, $socketIOPath = 'socket.io')
 	{
 		$protocol = 1; //has to be 1
-		$this->socketIOUrl = $socketIOUrl . '/' . $socketIOPath . '/' . (string) $protocol;
+		$this->socketIOUrl = str_replace(array("'", '"', "&quot;"), array('', '', ''), $socketIOUrl) . '/' . $socketIOPath . '/' . (string) $protocol;
 		$this->parseUrl();
 	}
 
