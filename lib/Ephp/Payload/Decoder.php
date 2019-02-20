@@ -9,11 +9,11 @@
  * @license   http://www.opensource.org/licenses/MIT-License MIT License
  */
 
-namespace ElephantIO\Payload;
+namespace Ephp\Payload;
 
 use Countable;
 
-use ElephantIO\AbstractPayload;
+use Ephp\AbstractPayload;
 
 /**
  * Decode the payload from a received frame

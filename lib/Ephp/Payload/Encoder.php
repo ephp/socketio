@@ -9,9 +9,9 @@
  * @license   http://www.opensource.org/licenses/MIT-License MIT License
  */
 
-namespace ElephantIO\Payload;
+namespace Ephp\Payload;
 
-use ElephantIO\AbstractPayload;
+use Ephp\AbstractPayload;
 
 /**
  * Encode the payload before sending it to a frame
